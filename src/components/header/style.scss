@@ -1,0 +1,32 @@
+@import "../../variables/variables.scss";
+$__border-color: primaryColor;
+
+.nav-bar {
+  font-family: $font-Antonio;
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  padding: 20px 20px;
+  border-bottom: 2px solid rgba(145, 145, 145, 0.377);
+  .logo {
+    font-size: 22px;
+  }
+  .nav-bar-items {
+    font-family: $font-Spartan;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    .nav-item {
+      padding-top: 24px;
+      color: #dadadacc;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover,
+      &:active {
+        color: #fff;
+        border-top: 3px solid rgba(0, 0, 0, 0);
+      }
+    }
+  }
+}
