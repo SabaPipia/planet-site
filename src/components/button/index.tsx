@@ -10,7 +10,6 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({ count, text, isActive, onClick }) => {
-  console.log(isActive);
   return (
     <>
       <div

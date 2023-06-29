@@ -3,7 +3,7 @@ import "./style.scss";
 
 type CardProps = {
   title: string;
-  info: string;
+  info?: string;
 };
 
 const Card: React.FC<CardProps> = ({ title, info }) => {
