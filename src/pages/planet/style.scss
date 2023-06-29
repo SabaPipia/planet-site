@@ -6,6 +6,13 @@
   align-items: center;
   .planet-icon {
     position: relative;
+    display: flex;
+    justify-content: center;
+    .main-icon {
+      display: flex;
+      justify-self: center;
+      scale: 0.8;
+    }
     .geology {
       opacity: 1;
       position: absolute;
@@ -58,4 +65,21 @@
   padding: 10px;
   display: flex;
   justify-content: space-around;
+}
+
+@media (max-height: 900px) {
+  .main-seciton {
+    height: 70vh;
+    text-align: center;
+    .planet-icon {
+      .saturn,
+      .jupiter {
+        scale: 0.6;
+        margin-top: 0;
+      }
+    }
+    .planet-info {
+      align-self: flex-start;
+    }
+  }
 }
