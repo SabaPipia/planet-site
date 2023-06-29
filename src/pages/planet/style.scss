@@ -1,0 +1,61 @@
+@import "../../variables/variables.scss";
+
+.main-seciton {
+  height: 70vh;
+  text-align: center;
+  align-items: center;
+  .planet-icon {
+    position: relative;
+    .geology {
+      opacity: 1;
+      position: absolute;
+      width: 180px;
+      top: 60%;
+      right: 300px;
+    }
+    .icon-hidden {
+      opacity: 0;
+    }
+  }
+  .planet-info {
+    display: flex;
+    justify-content: center;
+    .planet-info-inner-div {
+      width: 350px;
+      align-items: safe;
+    }
+    h1 {
+      font-family: $font-Antonio;
+      text-transform: uppercase;
+      font-size: 100px;
+      margin-bottom: 30px;
+    }
+    p {
+      line-height: 1.3;
+      color: #ffffffad;
+      margin-bottom: 30px;
+    }
+    h3 {
+      color: #ffffffad;
+      margin-bottom: 30px;
+      align-items: center;
+      a {
+        color: #ffffffad;
+        margin-right: 6px;
+      }
+    }
+    text-align: start;
+    font-family: $font-Spartan;
+    color: #fff;
+    .btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
+.cards-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}

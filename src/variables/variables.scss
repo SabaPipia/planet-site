@@ -3,3 +3,8 @@
 
 $font-Antonio: "Antonio", sans-serif;
 $font-Spartan: "League Spartan", sans-serif;
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
