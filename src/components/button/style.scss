@@ -1,0 +1,26 @@
+@import "../../variables/variables.scss";
+.btn {
+  cursor: pointer;
+  width: 320px;
+  height: 48px;
+  background: none;
+  border: 1px solid #d8d8d8;
+  color: #fff;
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  font-family: $font-Spartan;
+  align-items: center;
+  padding-left: 30px;
+  h5 {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+  }
+  &:hover {
+    background-color: #38384f;
+  }
+}
+.btn-active {
+  background-color: rgb(27, 56, 134);
+}
