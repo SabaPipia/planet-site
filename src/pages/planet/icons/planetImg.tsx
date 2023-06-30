@@ -17,6 +17,9 @@ import {
   Venus,
   Venus2,
 } from "../imports";
+
+import "./planetImg.scss";
+
 type PlanetImgProps = {
   count: string;
   params?: string;
@@ -77,7 +80,7 @@ const PlanetImg: React.FC<PlanetImgProps> = ({ count, params }) => {
       }
     }
   };
-  return <div>{handleChange()}</div>;
+  return <div className="planet-img">{handleChange()}</div>;
 };
 
 export default PlanetImg;

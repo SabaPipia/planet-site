@@ -37,7 +37,7 @@ const PlanetIcon: React.FC<PlanetProps> = ({ isIconHidden, params }) => {
   };
   console.log(params);
   return (
-    <div>
+    <div className={classnames("planet-surface")}>
       <img
         className={classnames("geology", { "icon-hidden": isIconHidden })}
         src={getIcon()}

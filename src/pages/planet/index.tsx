@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./style.scss";
 import data from "./data.json";
 import classnames from "classnames";
 import PlanetIcon from "./icons/planetIcon";
@@ -9,6 +8,7 @@ import PlanetImg from "./icons/planetImg";
 import { useParams } from "react-router-dom";
 
 import Card from "../../components/card";
+import "./style.scss";
 
 type planetDataType = {
   name: string;
@@ -62,51 +62,53 @@ function Planet() {
   }, [isActive]);
 
   return (
-    <>
-      <div className={classnames("main-seciton grid-container-2")}>
+    <div className={classnames("planet-wrapper")}>
+      <div className={classnames("main-seciton")}>
         <div className={classnames("planet-icon")}>
           <PlanetImg count={isActive} params={params.planet} />
           <PlanetIcon params={params.planet} isIconHidden={isIconHidden} />
         </div>
         <div className={classnames("planet-info")}>
           <div className={classnames("planet-info-inner-div")}>
-            <h1>{planetData?.name}</h1>
-            <p>
-              {isActive === "1" ? planetData?.overview.content : null}
-              {isActive === "2" ? planetData?.structure.content : null}
-              {isActive === "3" ? planetData?.geology.content : null}
-            </p>
-            <h3>
-              Source:
-              {isActive === "1" ? (
-                <a
-                  target="_blank"
-                  href={planetData?.overview.source}
-                  rel="noreferrer"
-                >
-                  Wikipedia
-                </a>
-              ) : null}
-              {isActive === "2" ? (
-                <a
-                  target="_blank"
-                  href={planetData?.structure.source}
-                  rel="noreferrer"
-                >
-                  Wikipedia
-                </a>
-              ) : null}
-              {isActive === "3" ? (
-                <a
-                  target="_blank"
-                  href={planetData?.geology.source}
-                  rel="noreferrer"
-                >
-                  Wikipedia
-                </a>
-              ) : null}
-              <ExternalLink />
-            </h3>
+            <div className={classnames("planet-info-content")}>
+              <h1>{planetData?.name}</h1>
+              <p>
+                {isActive === "1" ? planetData?.overview.content : null}
+                {isActive === "2" ? planetData?.structure.content : null}
+                {isActive === "3" ? planetData?.geology.content : null}
+              </p>
+              <h3>
+                Source:
+                {isActive === "1" ? (
+                  <a
+                    target="_blank"
+                    href={planetData?.overview.source}
+                    rel="noreferrer"
+                  >
+                    Wikipedia
+                  </a>
+                ) : null}
+                {isActive === "2" ? (
+                  <a
+                    target="_blank"
+                    href={planetData?.structure.source}
+                    rel="noreferrer"
+                  >
+                    Wikipedia
+                  </a>
+                ) : null}
+                {isActive === "3" ? (
+                  <a
+                    target="_blank"
+                    href={planetData?.geology.source}
+                    rel="noreferrer"
+                  >
+                    Wikipedia
+                  </a>
+                ) : null}
+                <ExternalLink />
+              </h3>
+            </div>
             <div className={classnames("btn-wrapper")}>
               <Button
                 count="01"
@@ -131,12 +133,14 @@ function Planet() {
         </div>
       </div>
       <div className={classnames("cards-wrapper")}>
-        <Card title={`rotation Time`} info={planetData?.rotation} />
-        <Card title="Revolution Time" info={planetData?.revolution} />
-        <Card title="radius" info={planetData?.radius} />
-        <Card title="Average Temp" info={planetData?.temperature} />
+        <div className={classnames("cards-div")}>
+          <Card title={`rotation Time`} info={planetData?.rotation} />
+          <Card title="Revolution Time" info={planetData?.revolution} />
+          <Card title="radius" info={planetData?.radius} />
+          <Card title="Average Temp" info={planetData?.temperature} />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

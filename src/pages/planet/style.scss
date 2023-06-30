@@ -1,24 +1,36 @@
 @import "../../variables/variables.scss";
-
+.planet-wrapper {
+  .cards-wrapper {
+    .cards-div {
+      overflow: hidden;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
 .main-seciton {
   height: 70vh;
   text-align: center;
   align-items: center;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #070724;
   .planet-icon {
     position: relative;
-    display: flex;
-    justify-content: center;
-    .main-icon {
-      display: flex;
-      justify-self: center;
-      scale: 0.8;
+    .saturn,
+    .jupiter {
+      scale: 1;
+      margin-top: 0;
     }
     .geology {
       opacity: 1;
-      position: absolute;
       width: 180px;
-      top: 60%;
-      right: 300px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 20%);
     }
     .icon-hidden {
       opacity: 0;
@@ -28,8 +40,10 @@
     display: flex;
     justify-content: center;
     .planet-info-inner-div {
-      width: 350px;
-      align-items: safe;
+      .planet-info-content {
+        width: 350px;
+        align-items: safe;
+      }
     }
     h1 {
       font-family: $font-Antonio;
@@ -61,25 +75,39 @@
     }
   }
 }
-.cards-wrapper {
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-}
 
 @media (max-height: 900px) {
+  .planet-info {
+    align-self: flex-start;
+  }
+}
+@media (max-width: 1072px) {
   .main-seciton {
-    height: 70vh;
-    text-align: center;
+    display: inline;
     .planet-icon {
-      .saturn,
-      .jupiter {
-        scale: 0.6;
-        margin-top: 0;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
     }
     .planet-info {
-      align-self: flex-start;
+      width: 100vw;
+    }
+    .planet-info-inner-div {
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+  .cards-wrapper {
+    .cards-div {
+      height: 30vh;
+      display: flex;
+      align-items: center;
     }
   }
 }
