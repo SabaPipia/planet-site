@@ -30,3 +30,22 @@ $__border-color: primaryColor;
     }
   }
 }
+
+@media (max-width: 1072px) {
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .logo {
+      padding: 20px;
+      font-size: 52px;
+    }
+    .nav-bar-items {
+      justify-content: space-between;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 22px;
+    }
+  }
+}
