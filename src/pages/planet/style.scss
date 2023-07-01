@@ -1,22 +1,23 @@
 @import "../../variables/variables.scss";
 .planet-wrapper {
-  .cards-wrapper {
-    .cards-div {
-      overflow: hidden;
-      padding: 10px;
-      display: flex;
-      justify-content: space-around;
-    }
+  .cards-div {
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
   }
 }
 .main-seciton {
-  height: 70vh;
+  height: calc(100vh - 60px - 10px);
   text-align: center;
   align-items: center;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #070724;
+  .cards-div {
+    grid-column: 1 / span 2;
+  }
   .planet-icon {
     position: relative;
     .saturn,
@@ -84,14 +85,12 @@
 @media (max-width: 1072px) {
   .main-seciton {
     display: inline;
+    overflow: hidden !important;
     .planet-icon {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 20px;
-    }
-    .planet-info {
-      width: 100vw;
     }
     .planet-info-inner-div {
       margin-top: auto;
@@ -103,11 +102,37 @@
       align-items: center;
     }
   }
-  .cards-wrapper {
-    .cards-div {
-      height: 30vh;
+  .cards-div {
+    // height: 30vh;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 710px) {
+  .cards-div {
+    display: flex;
+    flex-direction: column;
+    .card {
+      width: 100%;
+      padding-left: 90px;
+      backdrop-filter: blur(0px);
+    }
+  }
+  .planet-info {
+    .planet-info-inner-div {
       display: flex;
-      align-items: center;
+      flex-direction: column-reverse;
+      .btn-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 0;
+        border-bottom: 2px solid rgba(128, 128, 128, 0.384);
+        .btn {
+          border: none;
+        }
+      }
     }
   }
 }

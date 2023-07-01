@@ -131,8 +131,6 @@ function Planet() {
             </div>
           </div>
         </div>
-      </div>
-      <div className={classnames("cards-wrapper")}>
         <div className={classnames("cards-div")}>
           <Card title={`rotation Time`} info={planetData?.rotation} />
           <Card title="Revolution Time" info={planetData?.revolution} />
