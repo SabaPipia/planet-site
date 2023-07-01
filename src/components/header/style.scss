@@ -11,6 +11,9 @@ $__border-color: primaryColor;
   .logo {
     font-size: 22px;
   }
+  .icon-burger {
+    display: none;
+  }
   .nav-bar-items {
     font-family: $font-Spartan;
     list-style: none;
@@ -46,6 +49,45 @@ $__border-color: primaryColor;
       padding-top: 20px;
       padding-bottom: 20px;
       font-size: 22px;
+    }
+  }
+}
+@media (max-width: 710px) {
+  .nav-bar {
+    position: relative;
+    .logo {
+      text-align: start;
+      font-size: 42px;
+    }
+    .burger-div {
+      .icon-burger {
+        display: inline;
+      }
+    }
+    .nav-bar-items {
+      position: absolute;
+      top: 101%;
+      background-color: #0707247a;
+      left: 0;
+      z-index: 199;
+      width: calc(100% - 80px);
+      height: calc(120vh - 50px);
+      padding: 10px 40px;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-around;
+      overflow: hidden;
+      backdrop-filter: blur(22px);
+    }
+    .nav-bar-hidden {
+      display: none;
+    }
+    .nav-icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }
